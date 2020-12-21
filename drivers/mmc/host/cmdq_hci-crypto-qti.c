@@ -129,6 +129,8 @@ static int cmdq_crypto_qti_keyslot_program(struct keyslot_manager *ksm,
 	if (err)
 		pr_err("%s: failed with error %d\n", __func__, err);
 
+	mmc_host_clk_release(mmc_host);
+
 	return err;
 }
 
